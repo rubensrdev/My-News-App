@@ -13,6 +13,9 @@
 		452F33032C3BF2C8007A4232 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452F33022C3BF2C8007A4232 /* Preview Assets.xcassets */; };
 		452F330E2C3BF561007A4232 /* NewsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F330D2C3BF561007A4232 /* NewsResponseModel.swift */; };
 		452F33102C3BF570007A4232 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F330F2C3BF570007A4232 /* ArticleModel.swift */; };
+		452F33132C3BF651007A4232 /* CDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 452F33112C3BF651007A4232 /* CDModel.xcdatamodeld */; };
+		452F33152C3BF66A007A4232 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F33142C3BF66A007A4232 /* PersistenceController.swift */; };
+		452F33172C3BF790007A4232 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F33162C3BF790007A4232 /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		452F33022C3BF2C8007A4232 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		452F330D2C3BF561007A4232 /* NewsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseModel.swift; sourceTree = "<group>"; };
 		452F330F2C3BF570007A4232 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		452F33122C3BF651007A4232 /* CDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModel.xcdatamodel; sourceTree = "<group>"; };
+		452F33142C3BF66A007A4232 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		452F33162C3BF790007A4232 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		452F330B2C3BF2DD007A4232 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				452F33162C3BF790007A4232 /* NewsViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -101,6 +108,8 @@
 		452F330C2C3BF2E2007A4232 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				452F33112C3BF651007A4232 /* CDModel.xcdatamodeld */,
+				452F33142C3BF66A007A4232 /* PersistenceController.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 			files = (
 				452F32FE2C3BF2C6007A4232 /* Home.swift in Sources */,
 				452F330E2C3BF561007A4232 /* NewsResponseModel.swift in Sources */,
+				452F33132C3BF651007A4232 /* CDModel.xcdatamodeld in Sources */,
+				452F33152C3BF66A007A4232 /* PersistenceController.swift in Sources */,
+				452F33172C3BF790007A4232 /* NewsViewModel.swift in Sources */,
 				452F33102C3BF570007A4232 /* ArticleModel.swift in Sources */,
 				452F32FC2C3BF2C6007A4232 /* mynewsApp.swift in Sources */,
 			);
@@ -384,6 +396,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		452F33112C3BF651007A4232 /* CDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				452F33122C3BF651007A4232 /* CDModel.xcdatamodel */,
+			);
+			currentVersion = 452F33122C3BF651007A4232 /* CDModel.xcdatamodel */;
+			name = CDModel.xcdatamodeld;
+			path = "/Users/ruben/Dev/apps/11-mynewsapp/mynews/mynews/data/CDModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 452F32F02C3BF2C6007A4232 /* Project object */;
 }
