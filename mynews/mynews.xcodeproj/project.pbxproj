@@ -11,6 +11,8 @@
 		452F32FE2C3BF2C6007A4232 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F32FD2C3BF2C6007A4232 /* Home.swift */; };
 		452F33002C3BF2C8007A4232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452F32FF2C3BF2C8007A4232 /* Assets.xcassets */; };
 		452F33032C3BF2C8007A4232 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452F33022C3BF2C8007A4232 /* Preview Assets.xcassets */; };
+		452F330E2C3BF561007A4232 /* NewsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F330D2C3BF561007A4232 /* NewsResponseModel.swift */; };
+		452F33102C3BF570007A4232 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F330F2C3BF570007A4232 /* ArticleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		452F32FD2C3BF2C6007A4232 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		452F32FF2C3BF2C8007A4232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		452F33022C3BF2C8007A4232 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		452F330D2C3BF561007A4232 /* NewsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseModel.swift; sourceTree = "<group>"; };
+		452F330F2C3BF570007A4232 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		452F330A2C3BF2D7007A4232 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				452F330D2C3BF561007A4232 /* NewsResponseModel.swift */,
+				452F330F2C3BF570007A4232 /* ArticleModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -170,6 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				452F32FE2C3BF2C6007A4232 /* Home.swift in Sources */,
+				452F330E2C3BF561007A4232 /* NewsResponseModel.swift in Sources */,
+				452F33102C3BF570007A4232 /* ArticleModel.swift in Sources */,
 				452F32FC2C3BF2C6007A4232 /* mynewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
