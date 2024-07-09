@@ -17,34 +17,48 @@ struct NewsListView: View {
                 List {
                     ForEach(viewModel.articles) { article in
                         VStack(alignment: .leading) {
-                            // Título del artículo
-                            Text(article.title)
-                                .font(.headline)
-                            
-                            // Descripción del artículo
-                            Text(article.description ?? "")
-                                .font(.subheadline)
-                            
-                            // Imagen del artículo si está disponible
-                            if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
-                                AsyncImage(url: url) { phase in
-                                    switch phase {
-                                    case .empty:
-                                        ProgressView()
-                                    case .success(let image):
-                                        image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 300, height: 300)
-                                    case .failure:
-                                        EmptyView()
-                                    @unknown default:
-                                        EmptyView()
+                            HStack {
+                                VStack {
+                                    Text(article.title)
+                                        .font(.headline)
+                                    
+                                    Text(article.description ?? "")
+                                        .font(.subheadline)
+                                }
+                                VStack {
+                                    // Imagen del artículo si está disponible
+                                    if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
+                                        AsyncImage(url: url) { phase in
+                                            switch phase {
+                                            case .empty:
+                                                ProgressView()
+                                            case .success(let image):
+                                                image
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 100, height: 100)
+                                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                                            case .failure:
+                                                EmptyView()
+                                            @unknown default:
+                                                EmptyView()
+                                            }
+                                        }
                                     }
                                 }
                             }
+                            
                         }
                         .padding()
+                        .swipeActions(edge: .trailing) {
+                            Button {
+                                print("🤖: Save to read later \(article.title)")
+                            } label: {
+                                Label("Save to read later", systemImage: "bookmark")
+                            }
+                            .tint(.blue)
+                        }
                         .onAppear {
                             // Verificar si se ha llegado al final de la lista
                             if article == viewModel.articles.last {
