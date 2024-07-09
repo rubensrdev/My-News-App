@@ -8,5 +8,7 @@
 import Foundation
 
 struct NewsResponseModel: Codable {
+    let status: String
+    let totalResults: Int
     var articles: [ArticleModel]
 }

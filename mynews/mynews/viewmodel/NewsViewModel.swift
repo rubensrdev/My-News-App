@@ -8,25 +8,32 @@
 import Foundation
 import Combine
 
-class NewsViewModel {
+class NewsViewModel: ObservableObject {
     
     @Published var articles: [ArticleModel] = []
+    private let newsAPI = NewsAPI()
     private var cancellables = Set<AnyCancellable>()
-    private let apiKey = "" // TODO add API KEY
+    var currentPage = 1
+    let pageSize = 10
     
     init() {
         fetchNews()
     }
 
     func fetchNews() {
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY")! // TODO add Query
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: NewsResponseModel.self, decoder: JSONDecoder())
-            .map { $0.articles }
-            .replaceError(with: [])
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.articles, on: self)
+        print("🤖: Fetch news execute... ")
+        newsAPI.fetchNews(page: currentPage, pageSize: pageSize)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("🤖: Error fetching news: \(error)")
+                }
+            }, receiveValue: { articles in
+                self.articles.append(contentsOf: articles)
+                self.currentPage += 1
+            })
             .store(in: &cancellables)
     }
     
