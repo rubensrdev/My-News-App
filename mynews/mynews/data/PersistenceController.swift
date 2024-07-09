@@ -24,4 +24,17 @@ struct PersistenceController {
             }
         })
     }
+    
+    func saveContext() {
+            let context = container.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    let nsError = error as NSError
+                    fatalError("Error saving Core Data context: \(nsError.localizedDescription)")
+                }
+            }
+        }
+    
 }
