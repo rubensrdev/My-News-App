@@ -9,13 +9,14 @@ import SwiftUI
 
 struct NewsListView: View {
     
-    @StateObject private var viewModel = NewsViewModel()
+    @StateObject private var newsViewModel = NewsViewModel()
+    @StateObject private var savedArticleViewModel = SavedArticlesViewModel()
     @State private var isLoading = false
     
     var body: some View {
             NavigationView {
                 List {
-                    ForEach(viewModel.articles) { article in
+                    ForEach(newsViewModel.articles) { article in
                         VStack(alignment: .leading) {
                             HStack {
                                 VStack {
@@ -54,6 +55,11 @@ struct NewsListView: View {
                         .swipeActions(edge: .trailing) {
                             Button {
                                 print("🤖: Save to read later \(article.title)")
+                                savedArticleViewModel.saveArticle(title: article.title,
+                                                                  url: article.url,
+                                                                  imageUrl: article.urlToImage,
+                                                                  content: article.content)
+                                
                             } label: {
                                 Label("Save to read later", systemImage: "bookmark")
                             }
@@ -61,7 +67,7 @@ struct NewsListView: View {
                         }
                         .onAppear {
                             // Verificar si se ha llegado al final de la lista
-                            if article == viewModel.articles.last {
+                            if article == newsViewModel.articles.last {
                                 loadMoreContentIfNeeded()
                             }
                         }
@@ -69,18 +75,18 @@ struct NewsListView: View {
                 }
                 .navigationTitle("Noticias")
                 .onAppear {
-                    viewModel.fetchNews()
+                    newsViewModel.fetchNews()
                 }
             }
         }
     
     private func loadMoreContentIfNeeded() {
         guard !isLoading else { return }
-        let thresholdIndex = viewModel.articles.count - 1
+        let thresholdIndex = newsViewModel.articles.count - 1
         
-        if thresholdIndex >= (viewModel.currentPage - 1) * viewModel.pageSize {
+        if thresholdIndex >= (newsViewModel.currentPage - 1) * newsViewModel.pageSize {
                 isLoading = true
-                viewModel.fetchNews()
+                newsViewModel.fetchNews()
                 isLoading = false
             }
         }

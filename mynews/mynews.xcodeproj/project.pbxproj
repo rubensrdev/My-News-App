@@ -20,6 +20,7 @@
 		452F331B2C3D4311007A4232 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F331A2C3D4311007A4232 /* NewsListView.swift */; };
 		452F331D2C3D431F007A4232 /* SavedArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F331C2C3D431F007A4232 /* SavedArticlesView.swift */; };
 		452F331F2C3D4851007A4232 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F331E2C3D4851007A4232 /* NewsAPI.swift */; };
+		452F33232C3E8B4F007A4232 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F33222C3E8B4F007A4232 /* ArticleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		452F331A2C3D4311007A4232 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		452F331C2C3D431F007A4232 /* SavedArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticlesView.swift; sourceTree = "<group>"; };
 		452F331E2C3D4851007A4232 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		452F33222C3E8B4F007A4232 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				452F32FD2C3BF2C6007A4232 /* Home.swift */,
 				452F331A2C3D4311007A4232 /* NewsListView.swift */,
 				452F331C2C3D431F007A4232 /* SavedArticlesView.swift */,
+				452F33222C3E8B4F007A4232 /* ArticleDetailView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452F33232C3E8B4F007A4232 /* ArticleDetailView.swift in Sources */,
 				452F331F2C3D4851007A4232 /* NewsAPI.swift in Sources */,
 				452F32FE2C3BF2C6007A4232 /* Home.swift in Sources */,
 				452F330E2C3BF561007A4232 /* NewsResponseModel.swift in Sources */,

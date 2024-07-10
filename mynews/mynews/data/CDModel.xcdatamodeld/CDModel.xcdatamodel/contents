@@ -7,5 +7,6 @@
         <attribute name="imageURL" optional="YES" attributeType="String"/>
         <attribute name="isRead" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
 </model>
